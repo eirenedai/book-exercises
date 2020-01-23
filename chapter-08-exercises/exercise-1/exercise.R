@@ -7,12 +7,12 @@ my_breakfast <- c("bread","peanuts butter","apple","milk")
 my_lunch <- c("chicken","lettuce","rice","carrot")
 
 # Create a list `meals` that has contains your breakfast and lunch
-meals <- list(breakfast="bread,peanuts butter,apple,milk", lunch="chicken,lettuce,rice,carrot")
+meals <- list(breakfast=my_breakfast, lunch=my_lunch)
 
 # Add a "dinner" element to your `meals` list that has what you plan to eat 
 # for dinner
 
-meals$dinner<-"eggs, cucumber"
+meals$dinner<-c("eggs", "cucumber")
 
 # Use dollar notation to extract your `dinner` element from your list
 # and save it in a vector called 'dinner'
@@ -25,27 +25,24 @@ meals[[5]] <- meals[["lunch"]]
 
 # Use single-bracket notation to extract your breakfast and lunch from your list
 # and save them to a list called `early_meals`
-early_meals <- list(meals[c("breakfast","lunch")])
-
+early_meals <- meals[c("breakfast", "lunch")]
+print(early_meals)
 
 ### Challenge ###
 
 # Create a list that has the number of items you ate for each meal
 # Hint: use the `lappy()` function to apply the `length()` function to each item
-count<-function(breakfast,lunch,dinner) {
-  num[breakfast]<- length(meals[[breakfast]])
-  num[lunch]<- length(meals[[lunch]])
-  num[dinner]<- length(meals[[dinner]])
-  return(num)
-}
-lapply(count(meals$breakfast,meals$lunch,meals$dinner))
+num_items <- lapply(meals, length)
+
 # Write a function `add_pizza` that adds pizza to a given meal vector, and
 # returns the pizza-fied vector
-add_pizza <- function(meal) {
-  pizza-field <- c(meal, "pizza")
-  return(pizza-field)
+add_pizza <- function(meal_vector) {
+  #add pizza to that vetor
+  new_vector <- c(meal_vector, "pizza")
+  #return the new vector
+  return(new_vector)
 }
+add_pizza(meals$breakfast)
 
 # Create a vector `better_meals` that is all your meals, but with pizza!
-meal<- list(meals$breakfast,meals$lunch,meals$dinner)
-better_meals <- lapply(meal, add_pizza)
+better_meals <- lapply(meals, add_pizza)
