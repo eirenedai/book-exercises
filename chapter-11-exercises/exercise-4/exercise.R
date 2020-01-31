@@ -57,5 +57,6 @@ summarize(SEA,avg_delayed=mean(delayed_in_air,na.rm=TRUE))
 # (without showing any other data)!
 flights %>% 
   filter(origin=="JFK") %>% 
+  filter(dest=="SEA") %>% 
   summarize(ave_air_time=mean(air_time,na.rm=TRUE),min_air_time=min(air_time,na.rm=TRUE),max_air_time=max(air_time,na.rm=TRUE))
 
