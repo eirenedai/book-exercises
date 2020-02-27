@@ -1,0 +1,29 @@
+---
+title: "R Markdown Demo"
+author: "Eirene"
+date: "2/11/2020"
+output: html_document
+---
+
+## This is my report!
+
+I like writing **reports**
+
+```{r example, echo=FALSE}
+number <- runif(1:100)
+hist(number)
+numbers_mean <- mean(number)
+
+img <- "![puppies](url)"
+
+
+```
+
+The mean of the numbers happens to be **`r numbers_mean`** .
+
+```{r other_chunk}
+print("Hello World")
+```
+
+```{r table}
+letters
